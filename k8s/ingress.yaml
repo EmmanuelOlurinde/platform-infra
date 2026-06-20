@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: platform-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: platform.firstpeaksoft.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: platform-service
+            port:
+              number: 5000

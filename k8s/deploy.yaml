@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: platform-deployment
+  labels:
+    app: platform-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: platform-deployment
+  template:
+    metadata:
+      labels:
+        app: platform-deployment
+    spec:
+      containers:
+      - name: platform-deployment
+        image: emmanuelolurinde/platform:v1
+        ports:
+        - containerPort: 5000
