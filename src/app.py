@@ -9,7 +9,7 @@ def hello_world():
     return jsonify({
         'time': datetime.datetime.utcnow().isoformat(),
         'hostname': socket.gethostname(),
-        'message': 'Welcome to the platform infrastructure API!'
+        'message': 'Welcome to the platform infrastructure API'
     })
 
 @app.route('/api/v1/healthz')
